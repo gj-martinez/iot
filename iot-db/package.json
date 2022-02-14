@@ -4,6 +4,7 @@
   "description": "DB Module",
   "main": "index.js",
   "scripts": {
+    "setup": "DEBUG=iot:* node setup.js",
     "lint": "standard"
   },
   "repository": {
@@ -17,10 +18,12 @@
   },
   "homepage": "https://github.com/gj-martinez/iot#readme",
   "devDependencies": {
-    "standard": "^10.0.3"
+    "standard": "^16.0.4"
   },
   "dependencies": {
-    "pg": "^8.7.3",
+    "debug": "^4.3.3",
+    "inquirer": "^8.2.0",
+    "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.16.1"
   }
