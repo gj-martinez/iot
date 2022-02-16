@@ -5,6 +5,7 @@ const agent = {
   uuid: 'yyy-yyy-yyy',
   name: 'fixture',
   username: 'admin',
+  password: 'admin',
   hostname: 'test-host',
   pid: 0,
   connected: true,

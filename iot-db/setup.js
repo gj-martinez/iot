@@ -5,18 +5,19 @@ const inquirer = require('inquirer')
 const db = require('./')
 
 const prompt = inquirer.createPromptModule()
-
+const args = process.argv.slice()
 async function setup () {
-  const answer = await prompt([
-    {
-      type: 'confirm',
-      name: 'setup',
-      message: 'This will destroy your database, are you sure?'
+  if(!args.includes( '-y') && !args.includes( '--yes' )){
+    const answer = await prompt([
+      {
+        type: 'confirm',
+        name: 'setup',
+        message: 'This will destroy your database? are you sure?'
+      }
+    ])
+    if (!answer.setup) {
+      return console.log('Nothing happened :)')
     }
-  ])
-
-  if (!answer.setup) {
-    return console.log('Nothing happened :)')
   }
   const config = {
     database: process.env.DB_NAME || 'piot',

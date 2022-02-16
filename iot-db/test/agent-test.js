@@ -37,6 +37,7 @@ const newAgent = {
   uuid: '123-123-123',
   name: 'test',
   username: 'test',
+  password: 'test',
   hostname: 'test',
   pid: 0,
   connected: false
